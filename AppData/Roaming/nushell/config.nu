@@ -28,4 +28,4 @@ use ~/.cache/starship/init.nu
 
 
 alias dotfiles = git --git-dir=$"($env.USERPROFILE | path join '.dotfiles')" --work-tree=$"($env.USERPROFILE)" 
-
+# alias ls = eza --icons -F -H --group-directories-first --git -1
