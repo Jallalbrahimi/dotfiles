@@ -14,14 +14,23 @@ Yazi
 
 ## Utilities
 
-fzf
-fd
-ripgrep
-eza
-btop4win
-starship
-fastfetch
-fclones
-mdbook
+## fzf
+
+## fd
+
+## ripgrep
+
+## eza
+
+## btop4win
+
+## starship
+
+## fastfetch
+
+## fclones
+
+## mdbook
+
 
 
