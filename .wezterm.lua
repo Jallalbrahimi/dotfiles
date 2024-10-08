@@ -52,7 +52,7 @@ wezterm.on('update-right-status', function(window, pane)
   local status_color = '8B9BEB'
 
   if window:leader_is_active() then
-    status = '[LEADER]'
+    status = utf8.char(0x26A1)
     status_color = 'D08770'
   end
 
