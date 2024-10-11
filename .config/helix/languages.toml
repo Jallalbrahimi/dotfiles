@@ -1,0 +1,15 @@
+[[language]]
+name = "markdown"
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer" ]
+formatter = { command = "rustfmt" }
+auto-format = true
+indent = { tab-width = 4, unit = "t" }
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
