@@ -18,6 +18,8 @@ Yazi
 
 ## fd
 
+## bat
+
 ## ripgrep
 
 ## eza
