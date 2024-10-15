@@ -25,11 +25,14 @@ $env.config = {
 }
 
 
-
+export-env { $env.YAZI_CONFIG_HOME = "~/.config/yazi" }
 
 alias dotfiles = git --git-dir=$"($env.HOME | path join '.dotfiles')" --work-tree=$"($env.HOME)" 
 # alias ls = eza --icons -F -H --group-directories-first --git -1
 # alias hx = hx -c $"($env.XDG_CONFIG_HOME | path join 'helix/config.toml')"
 
-
+let btop_cmd = if ($nu.os-info.name == 'windows') { "btop4win.exe" } else { "btop" }
+def btop [] {
+    ^$btop_cmd 
+}
 #use ~/.cache/starship/init.nu

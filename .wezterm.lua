@@ -12,8 +12,8 @@ config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_frame = {
   font_size = 12.0
 }
-config.initial_cols = 120
-config.initial_rows = 30
+config.initial_cols = 160
+config.initial_rows = 50
 
 -- Tab bar
 config.enable_tab_bar = true
@@ -26,7 +26,7 @@ config.color_scheme = 'Nord (Gogh)'
 config.bold_brightens_ansi_colors = true
 
 -- Fonts
-config.font = wezterm.font('Fira Code Nerd Font', { weight = 'Regular'})
+config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular'})
 config.font_size = 12.0
 
 -- Shell
@@ -61,6 +61,27 @@ wezterm.on('update-right-status', function(window, pane)
     { Text =  ' ' .. status .. ' '  }
   }))
 end)
+
+
+
+
+
+-- wezterm.on('gui-startup', function(cmd)  
+--   local _, _, window = wezterm.mux.spawn_window{}  
+  
+--   -- Split the window vertically  
+--   local pane1 = window:active_tab():active_pane()  
+--   pane1:send_text("cd 'D:/home/'\r")  
+--   --pane1:send_text("hx\r")  
+  
+--   -- Split pane1 horizontally  
+--   local pane2 = pane1:split{direction="Right"}  
+--   pane2:send_text("btop\r")  
+  
+--   -- Split pane1 again vertically  
+--   local pane3 = pane2:split{direction="Bottom"}  
+--   --pane3:send_text("python3 -m http.server\n")
+-- end)
 
 -- and finally, return the configuration to wezterm
 return config
