@@ -22,11 +22,11 @@ config.hide_tab_bar_if_only_one_tab = false
 config.status_update_interval = 1000 
 
 -- Color scheme
-config.color_scheme = 'TokyoNight (Gogh)'
+config.color_scheme = 'Nord (Gogh)'
 config.bold_brightens_ansi_colors = true
 
 -- Fonts
-config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Medium'})
+config.font = wezterm.font('Fira Code Nerd Font', { weight = 'Regular'})
 config.font_size = 12.0
 
 -- Shell
