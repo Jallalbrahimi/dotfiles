@@ -26,7 +26,7 @@ config.color_scheme = 'TokyoNight (Gogh)'
 config.bold_brightens_ansi_colors = true
 
 -- Fonts
-config.font = wezterm.font('GeistMono Nerd Font', { weight = 'Medium'})
+config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Medium'})
 config.font_size = 12.0
 
 -- Shell
