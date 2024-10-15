@@ -26,8 +26,8 @@ config.color_scheme = 'Nord (Gogh)'
 config.bold_brightens_ansi_colors = true
 
 -- Fonts
-config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Regular'})
-config.font_size = 12.0
+config.font = wezterm.font('IosevkaTerm Nerd Font Mono', { weight = 'Regular'})
+config.font_size = 13.0
 
 -- Shell
 config.default_prog = { 'nu' }

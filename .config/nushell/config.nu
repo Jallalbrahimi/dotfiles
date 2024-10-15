@@ -8,7 +8,11 @@
 # https://github.com/nushell/nu_scripts/tree/main/themes
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
+    display_errors: {
+        exit_code: false
+        termination_signal: true
+    }
     error_style: "plain" # "fancy" or "plain" for screen reader-friendly error messages
 
     buffer_editor: hx # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
