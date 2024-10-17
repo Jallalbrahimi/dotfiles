@@ -43,6 +43,10 @@ config.keys = {
   { key = 'j', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Down' },
   { key = 'k', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Up' },
   { key = 'l', mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Right' },
+  { key = "H", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Left", 5}}},
+  { key = "J", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
+  { key = "K", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Up", 5}}},    
+  { key = "L", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
   { key = 'd', mods = 'LEADER', action = wezterm.action{CloseCurrentPane = {confirm = true}}},
   { key = 'x', mods = 'LEADER', action = wezterm.action{CloseCurrentPane = {confirm = true}}},
 }
