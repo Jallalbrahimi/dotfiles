@@ -13,6 +13,9 @@ dotfiles config --local status.showUntrackedFiles no
 
 # Install tools
 ```
+sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
+sudo dnf install nushell
+sudo dnf install helix
 sudo dnf install fd-find
 sudo dnf install bat
 sudo dnf install fzf
@@ -25,6 +28,8 @@ sudo dnf install fastfetch
 ```
 
 # keyboard
+hx /etc/vconsole.conf
+  KEYMAP="us-intl"
 
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 # hour
