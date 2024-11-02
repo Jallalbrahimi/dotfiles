@@ -26,6 +26,13 @@ sudo dnf install btop
 sudo dnf install fastfetch
 # sudo dnf install yazi
 ```
+# github cli
+
+```
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh --repo gh-cli
+```
 
 # keyboard
 hx /etc/vconsole.conf
