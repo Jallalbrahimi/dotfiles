@@ -32,11 +32,19 @@ sudo dnf install fastfetch
 sudo dnf install dnf5-plugins
 sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install gh --repo gh-cli
+
+ssh-keygen -t ed25519 -C "mail@mail.com"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+dotfiles remote set-url origin git@github.com:Jallalbrahimi/dotfiles.git
+dotfiles push --set-upstream origin main
+
 ```
 
 # keyboard
 hx /etc/vconsole.conf
   KEYMAP="us-intl"
+sudo localectl set-x11-keymap us
 
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 # hour
