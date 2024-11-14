@@ -13,7 +13,7 @@ config.window_frame = {
   font_size = 12.0
 }
 config.initial_cols = 160
-config.initial_rows = 50
+config.initial_rows = 35
 
 -- Tab bar
 config.enable_tab_bar = true
