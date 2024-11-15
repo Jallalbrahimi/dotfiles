@@ -7,11 +7,24 @@ line-number = "relative"
 rulers = [120]
 true-color = true
 color-modes = true
+popup-border = "all"
+
+[editor.indent-guides]
+render = true
+character = '⸽'
+skip-levels = 1
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.whitespace.render]
+newline = "all"
+
+[editor.whitespace.characters]
+newline = "↵"
+tabpad = "·" # Tabs will look like "→···"
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]

@@ -30,8 +30,9 @@ config.font = wezterm.font('IosevkaTerm Nerd Font Mono', { weight = 'Regular'})
 config.font_size = 13.0
 
 -- Shell
+local startup_dir = os.getenv("STARTUP_DIR") or os.getenv("HOME")
 config.default_prog = { 'nu' }
-config.default_cwd = os.getenv('HOME')
+config.default_cwd = os.getenv('STARTUP_DIR')
 
 -- Multiplexing
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 2000 }

@@ -14,6 +14,7 @@ dotfiles config --local status.showUntrackedFiles no
 # Install tools
 ```
 sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
+# sudo dnf install  nushell helix fd-find bat fzf ripgrep eza btop fastfetch
 sudo dnf install nushell
 sudo dnf install helix
 sudo dnf install fd-find
@@ -23,6 +24,7 @@ sudo dnf install ripgrep
 sudo dnf install eza
 sudo dnf install btop
 sudo dnf install fastfetch
+
 # sudo dnf install yazi
 ```
 # github cli
