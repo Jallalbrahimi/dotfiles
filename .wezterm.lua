@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 -- Force automatic reload
 config.automatically_reload_config = true
 
--- Window
+-- Window initial settings
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_frame = {
   font_size = 12.0

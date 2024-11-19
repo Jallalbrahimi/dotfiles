@@ -1,12 +1,18 @@
 theme = "nord-night"
 
 [editor]
+# Show open buffers
 bufferline = "multiple"
+# Highlight all lines with a cursor
 cursorline = true
+# Use relative line numbers
 line-number = "relative"
+# Show a ruler at column 120
 rulers = [120]
+# Force the theme to show colors
 true-color = true
 color-modes = true
+# Draws a border around popups
 popup-border = "all"
 
 [editor.indent-guides]
@@ -25,6 +31,12 @@ newline = "all"
 [editor.whitespace.characters]
 newline = "↵"
 tabpad = "·" # Tabs will look like "→···"
+
+[editor.lsp]
+# Disable automatically popups of signature parameter help
+auto-signature-help = false
+# Show LSP messages in the status line
+display-messages = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name", "file-modification-indicator"]
