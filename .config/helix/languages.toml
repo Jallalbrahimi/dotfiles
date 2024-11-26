@@ -13,3 +13,4 @@ indent = { tab-width = 4, unit = "t" }
 
 [language-server.rust-analyzer]
 command = "rust-analyzer"
+
