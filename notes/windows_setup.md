@@ -1,8 +1,10 @@
 # Define environment variables
 ```
-HOME = %USERPROFILE%
-STARTUP_DIR = D:\home
-XDG_CONFIG_HOME = %USERPROFILE%\.config
+# env variables are resolved to avoid issues with other shells than Powershell
+
+[Environment]::SetEnvironmentVariable("HOME", "$env:USERPROFILE", "User")
+[Environment]::SetEnvironmentVariable("XDG_CONFIG_HOME", "$env:USERPROFILE\.config", "User")
+[Environment]::SetEnvironmentVariable("STARTUP_DIR", "D:\home", "User")
 ```
 
 # Install Powershell
@@ -13,6 +15,8 @@ winget install Microsoft.PowerShell
 # Clone the repository
 ```
 git clone --bare https://github.com/Jallalbrahimi/dotfiles.git $HOME/.dotfiles
+git --git-dir=$env:USERPROFILE/.dotfiles --work-tree=$env:USERPROFILE checkout
+git --git-dir=$env:USERPROFILE/.dotfiles --work-tree=$env:USERPROFILE config --local status.showUntrackedFiles no
 ```
 
 If needed, reset it :
