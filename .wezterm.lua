@@ -12,7 +12,7 @@ config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_frame = {
   font_size = 12.0
 }
-config.initial_cols = 160
+config.initial_cols = 140
 config.initial_rows = 35
 
 -- Tab bar
