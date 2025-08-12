@@ -36,10 +36,11 @@ New-Item -ItemType SymbolicLink -Path "$($env:USERPROFILE)\AppData\Roaming\helix
 
 # Install tools
 ```
-winget install nushell Helix.Helix sharkdp.fd  sharkdp.bat  junegunn.fzf  BurntSushi.ripgrep.msvc  eza-community.eza  aristocratos.btop4win  Fastfetch-cli.Fastfetch  sxyazi.yazi
+winget install wez.wezterm nushell Helix.Helix sharkdp.fd  sharkdp.bat  junegunn.fzf  BurntSushi.ripgrep.msvc  eza-community.eza  aristocratos.btop4win  Fastfetch-cli.Fastfetch  sxyazi.yazi
 ```
 or 
 ```
+winget install wez.wezterm
 winget install nushell
 winget install Helix.Helix
 winget install sharkdp.fd
