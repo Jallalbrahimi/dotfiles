@@ -27,7 +27,7 @@ config.bold_brightens_ansi_colors = true
 
 -- Fonts
 config.font = wezterm.font_with_fallback {
-  { family = 'CaskaydiaCove Nerd Font', weight = 'Regular'},
+  { family = 'Cascadia Code NF', weight = 'Regular'},
   { family = 'IosevkaTerm Nerd Font Mono', weight = 'Regular'}
 }
 config.font_size = 13.0
