@@ -8,7 +8,7 @@
 # https://github.com/nushell/nu_scripts/tree/main/themes
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: false # true or false to enable or disable the welcome banner at startup
+    show_banner: true # true or false to enable or disable the welcome banner at startup
     display_errors: {
         exit_code: false
         termination_signal: true
@@ -24,7 +24,7 @@ $env.config = {
         # 133;C - Mark pre-execution
         # 133;D;exit - Mark execution finished with exit code
         # This is used to enable terminals to know where the prompt is, the command is, where the command finishes, and where the output of the command is
-        osc133: false
+        osc133: false,
     }
 }
 
@@ -40,3 +40,4 @@ def btop [] {
     ^$btop_cmd 
 }
 #use ~/.cache/starship/init.nu
+source $"($nu.home-path)/.cargo/env.nu"
