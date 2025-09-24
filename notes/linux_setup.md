@@ -1,13 +1,27 @@
 These configuration steps work in Fedora 42
 
-## git configuration
+## Setu git configuration
 ```
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
 
-## Setup dotfiles using git --bare
-see [how to](https://www.atlassian.com/git/tutorials/dotfiles)
+## Setup github cli
+
+```shell
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh --repo gh-cli
+
+ssh-keygen -t ed25519 -C "you@example.com"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+dotfiles remote set-url origin git@github.com:Jallalbrahimi/dotfiles.git
+dotfiles push --set-upstream origin main
+```
+
+## Setup dotfiles save using git --bare
+See [how to](https://www.atlassian.com/git/tutorials/dotfiles)
 
 ```shell
 sudo dnf install git
@@ -21,7 +35,7 @@ dotfiles config --local status.showUntrackedFiles no
 ## Update repos
 
 ### For multimedia
-see [how to](https://rpmfusion.org/Configuration)
+See [how to](https://rpmfusion.org/Configuration)
 
 ```shell
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -29,7 +43,7 @@ sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 ```
 
 ### Terra repos
-see [how to](https://rpmfusion.org/Configuration)
+See [how to](https://rpmfusion.org/Configuration)
 
 ($releasever is expected to be 42)
 ```shell
@@ -50,14 +64,16 @@ sudo dnf install eza
 sudo dnf install btop
 sudo dnf install fastfetch
 
+sudo dnf install vlc
+
 # sudo dnf install yazi
 ```
 
 
 ## Install non free codecs  (Fedora 42)
-see [how to](https://rpmfusion.org/Howto/Multimedia)
+See [how to](https://rpmfusion.org/Howto/Multimedia)
 
-Repos must be updated
+Non-free repos must have been set up
 
 ```shell
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
@@ -65,8 +81,6 @@ sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=Package
 
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-```
-
 ```
 
 ## keyboard and cedilla
@@ -106,19 +120,6 @@ and create/edit `~/.config/environment.d/im.conf`
 > QT_IM_MODULE=cedilla
 
 
-## github cli
-
-```shell
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh --repo gh-cli
-
-ssh-keygen -t ed25519 -C "mail@mail.com"
-ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub
-dotfiles remote set-url origin git@github.com:Jallalbrahimi/dotfiles.git
-dotfiles push --set-upstream origin main
-```
 
 ## Hour
 sudo timedatectl set-local-rtc 1 
@@ -159,11 +160,14 @@ sudo fc-cache -v
 ```
 
 ## .NET
+```shell
 sudo dnf install dotnet-sdk-9.0
-
+```
 ## Flathub
+```shell
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
+```
 ## PodmanDesktop
-
+```shell
 flatpak install flathub io.podman_desktop.PodmanDesktop
+```
