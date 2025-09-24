@@ -92,7 +92,7 @@ localectl
 ``` 
 or 
 ```shell
-localectl
+localectl status
 ``` 
 To set the keymap
 ```shell
@@ -116,9 +116,10 @@ sudo sed -i /usr/share/X11/locale/en_US.UTF-8/Compose -e 's/ć/ç/g' -e 's/Ć/Ç
 ```
 
 and create/edit `~/.config/environment.d/im.conf`
-> GTK_IM_MODULE=cedilla
-> QT_IM_MODULE=cedilla
-
+```
+GTK_IM_MODULE=cedilla
+QT_IM_MODULE=cedilla
+```
 
 
 ## Hour
@@ -130,8 +131,10 @@ sudo timedatectl set-local-rtc 1
 hx /etc/default/grub #
 ```
 
-> GRUB_DEFAULT=
-> GRUB_SAVEDEFAULT=true
+```
+GRUB_DEFAULT=
+GRUB_SAVEDEFAULT=true
+```
 
 ```shell
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
