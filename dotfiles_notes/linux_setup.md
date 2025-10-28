@@ -1,7 +1,8 @@
 These configuration steps work in Fedora 42
 
 ## Setu git configuration
-```
+```shell
+git config --global core.autocrlf 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
@@ -173,4 +174,12 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ## PodmanDesktop
 ```shell
 flatpak install flathub io.podman_desktop.PodmanDesktop
+```
+
+## Keyboard function keys issue
+https://blog.burkert.me/posts/solution-to-epomaker-keyboards-f-row-keys-in-linux/
+```shell
+echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
+sudo dracut --regenerate-all --force
+# reboot and enjoy your fully functioning keyboard!
 ```
