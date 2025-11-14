@@ -1,7 +1,6 @@
-theme = "papercolor-dark"
+theme = "nord"
 
-[editor]
-# Show open buffers
+[editor] # Show open buffers
 bufferline = "multiple"
 # Highlight all lines with a cursor
 cursorline = true

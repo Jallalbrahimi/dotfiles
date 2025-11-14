@@ -8,33 +8,34 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 
 -- Window initial settings
-config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+-- config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 config.window_frame = {
   font_size = 12.0
 }
-config.initial_cols = 140
+config.initial_cols = 120
 config.initial_rows = 35
 
 -- Tab bar
 config.enable_tab_bar = true
-config.use_fancy_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 config.status_update_interval = 1000 
 
 -- Color scheme
-config.color_scheme = 'One Dark (Gogh)'
+config.color_scheme = 'nordfox'
 config.bold_brightens_ansi_colors = true
 
 -- Fonts
 config.font = wezterm.font_with_fallback {
+  { family = 'JetBrainsMono Nerd Font Mono', weight = 'Regular'},
   { family = 'CaskaydiaCove Nerd Font', weight = 'Regular'},
   { family = 'IosevkaTerm Nerd Font Mono', weight = 'Regular'}
 }
-config.font_size = 13.0
+config.font_size = 12.0
 
 -- Shell
 local startup_dir = os.getenv("STARTUP_DIR") or os.getenv("HOME")
-config.default_prog = { 'nu' }
+-- config.default_prog = { 'nu' }
 config.default_cwd = os.getenv('STARTUP_DIR')
 
 -- Multiplexing

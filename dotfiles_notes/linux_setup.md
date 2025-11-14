@@ -1,6 +1,6 @@
-These configuration steps work in Fedora 42
+These configuration steps work in Fedora 43
 
-## Setu git configuration
+## Setup git configuration
 ```shell
 git config --global core.autocrlf 
 git config --global user.email "you@example.com"
@@ -41,6 +41,9 @@ See [how to](https://rpmfusion.org/Configuration)
 ```shell
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+
+dnf check-update
+sudo dnf install code # or code-insiders
 ```
 
 ### Terra repos
@@ -70,6 +73,13 @@ sudo dnf install vlc
 # sudo dnf install yazi
 ```
 
+## Install VS Code
+
+https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux
+```
+  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+```
 
 ## Install non free codecs  (Fedora 42)
 See [how to](https://rpmfusion.org/Howto/Multimedia)
@@ -166,7 +176,10 @@ sudo fc-cache -v
 ## .NET
 ```shell
 sudo dnf install dotnet-sdk-9.0
+dotnet tool install --ignore-failed-sources --add-source https://api.nuget.org/v3/index.json --global dotnet-ef
+
 ```
+
 ## Flathub
 ```shell
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -182,4 +195,12 @@ https://blog.burkert.me/posts/solution-to-epomaker-keyboards-f-row-keys-in-linux
 echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
 sudo dracut --regenerate-all --force
 # reboot and enjoy your fully functioning keyboard!
+```
+
+## Change shell to zsh
+
+```
+sudo dnf install zsh
+cat /etc/shells
+chsh -s $(which zsh)
 ```
