@@ -199,7 +199,7 @@ sudo dracut --regenerate-all --force
 
 ## Change shell to zsh
 
-```
+```shell
 sudo dnf install zsh
 cat /etc/shells
 chsh -s $(which zsh)
