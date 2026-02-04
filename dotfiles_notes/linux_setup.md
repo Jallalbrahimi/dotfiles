@@ -49,26 +49,26 @@ sudo dnf install code # or code-insiders
 ### Terra repos
 See [how to](https://rpmfusion.org/Configuration)
 
-($releasever is expected to be 42)
+($releasever is expected to be 43)
 ```shell
+releasever=43
 sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
 ```
 
 ## Install tools
 
 ```shell
-# sudo dnf install  nushell helix fd-find bat fzf ripgrep eza btop fastfetch
-sudo dnf install nushell
-sudo dnf install helix
-sudo dnf install fd-find
-sudo dnf install bat
-sudo dnf install fzf
-sudo dnf install ripgrep
-sudo dnf install eza
-sudo dnf install btop
-sudo dnf install fastfetch
-
-sudo dnf install vlc
+sudo dnf install helix fd-find bat fzf ripgrep eza btop fastfetch vlc
+# sudo dnf install nushell
+# sudo dnf install helix
+# sudo dnf install fd-find
+# sudo dnf install bat
+# sudo dnf install fzf
+# sudo dnf install ripgrep
+# sudo dnf install eza
+# sudo dnf install btop
+# # sudo dnf install fastfetch
+# sudo dnf install vlc
 
 # sudo dnf install yazi
 ```
@@ -81,7 +81,7 @@ https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 ```
 
-## Install non free codecs  (Fedora 42)
+## Install non free codecs  (Fedora 43)
 See [how to](https://rpmfusion.org/Howto/Multimedia)
 
 Non-free repos must have been set up
