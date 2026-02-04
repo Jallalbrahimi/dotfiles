@@ -76,9 +76,11 @@ sudo dnf install helix fd-find bat fzf ripgrep eza btop fastfetch vlc
 ## Install VS Code
 
 https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux
-```
-  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+```shell
+udo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+
+dnf check-update && sudo dnf install code
 ```
 
 ## Install non free codecs  (Fedora 43)
@@ -160,25 +162,31 @@ sudo hostnamectl set-hostname --static fedora-laptop
 # Nerd fonts
 
 ```shell
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip
+sudo mkdir -p /usr/local/share/fonts/JetBrainsMono
+sudo unzip JetBrainsMono.zip -d /usr/local/share/fonts/JetBrainsMono/
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
 sudo mkdir -p /usr/local/share/fonts/CascadiaCode
-sudo mkdir -p /usr/local/share/fonts/Lilex
-...
 sudo unzip CascadiaCode.zip -d /usr/local/share/fonts/CascadiaCode/
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lilex.zip
+sudo mkdir -p /usr/local/share/fonts/Lilex
 sudo unzip Lilex.zip -d /usr/local/share/fonts/Lilex
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip
+sudo mkdir -p /usr/local/share/fonts/UbuntuSans
+sudo unzip UbuntuSans.zip -d /usr/local/share/fonts/UbuntuSans
+
+...
+
 sudo fc-cache -v
 ```
 
 ## .NET
 ```shell
-sudo dnf install dotnet-sdk-9.0
+sudo dnf install dotnet-sdk-10.0
 dotnet tool install --ignore-failed-sources --add-source https://api.nuget.org/v3/index.json --global dotnet-ef
-
 ```
 
 ## Flathub
@@ -204,4 +212,20 @@ sudo dracut --regenerate-all --force
 sudo dnf install zsh
 cat /etc/shells
 chsh -s $(which zsh)
+```
+
+## Install librewolf
+```shell
+# add the repo
+sudo dnf config-manager addrepo --from-repofile=https://repo.librewolf.net/librewolf.repo
+
+# install the package
+sudo dnf install librewolf
+```
+
+
+## Install Wezterm
+```shell
+sudo dnf copr enable wezfurlong/wezterm-nightly
+sudo dnf install wezterm
 ```
