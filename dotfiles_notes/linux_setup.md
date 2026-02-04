@@ -28,7 +28,7 @@ See [how to](https://www.atlassian.com/git/tutorials/dotfiles)
 sudo dnf install git
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> $HOME/.gitignore
-git clone --bare https://github.com/Jallalbrahimi/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:Jallalbrahimi/dotfiles.git $HOME/.dotfiles
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 ```
@@ -128,8 +128,9 @@ sudo sed -i /usr/share/X11/locale/en_US.UTF-8/Compose -e 's/ć/ç/g' -e 's/Ć/Ç
 
 and create/edit `~/.config/environment.d/im.conf`
 ```
-GTK_IM_MODULE=cedilla
-QT_IM_MODULE=cedilla
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
 ```
 
 
