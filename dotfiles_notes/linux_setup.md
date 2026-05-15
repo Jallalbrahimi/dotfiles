@@ -1,4 +1,4 @@
-These configuration steps work in Fedora 43
+These configuration steps work in Fedora 44
 
 ## Setup git configuration
 ```shell
@@ -7,19 +7,6 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
 
-## Setup github cli
-
-```shell
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh --repo gh-cli
-
-ssh-keygen -t ed25519 -C "you@example.com"
-ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub
-dotfiles remote set-url origin git@github.com:Jallalbrahimi/dotfiles.git
-dotfiles push --set-upstream origin main
-```
 
 ## Setup dotfiles save using git --bare
 See [how to](https://www.atlassian.com/git/tutorials/dotfiles)
@@ -31,7 +18,23 @@ echo ".dotfiles" >> $HOME/.gitignore
 git clone --bare git@github.com:Jallalbrahimi/dotfiles.git $HOME/.dotfiles
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
+
+ssh-keygen -t ed25519 -C "you@example.com"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+dotfiles remote set-url origin git@github.com:Jallalbrahimi/dotfiles.git
+dotfiles push --set-upstream origin main
 ```
+
+## Setup github cli
+
+```shell
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh --repo gh-cli
+```
+
+
 
 ## Update repos
 
@@ -49,16 +52,17 @@ sudo dnf install code # or code-insiders
 ### Terra repos
 See [how to](https://rpmfusion.org/Configuration)
 
-($releasever is expected to be 43)
+($releasever is expected to be 44)
 ```shell
-releasever=43
-sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
+releasever=44
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 ```
 
 ## Install tools
 
 ```shell
 sudo dnf install helix fd-find bat fzf ripgrep eza btop fastfetch vlc
+sudo dnf install yt-dlp
 # sudo dnf install nushell
 # sudo dnf install helix
 # sudo dnf install fd-find
@@ -92,8 +96,8 @@ Non-free repos must have been set up
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf install mesa-va-drivers-freeworld
+# sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 ```
 
 ## keyboard and cedilla

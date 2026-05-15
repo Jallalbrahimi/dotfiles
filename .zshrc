@@ -39,6 +39,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)"
 fi
 
+export EDITOR=hx
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export ASPNETCORE_ENVIRONMENT=Development
